@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Matrix A Inputs -->
+        <TextView
+            android:text="Matrix A Size:"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/rowsAInput"
+                android:hint="Rows A"
+                android:inputType="number"
+                android:backgroundTint="?android:attr/colorControlNormal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:padding="8dp"/>
+
+            <EditText
+                android:id="@+id/colsAInput"
+                android:hint="Cols A"
+                android:inputType="number"
+                android:backgroundTint="?android:attr/colorControlNormal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:padding="8dp"/>
+
+            <Button
+                android:id="@+id/generateMatrixAButton"
+                android:text="Generate A"
+                android:backgroundTint="?android:attr/colorAccent"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"/>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:paddingTop="8dp"
+            android:importantForAccessibility="no">
+
+            <GridLayout
+                android:id="@+id/matrixAGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:rowOrderPreserved="false"
+                android:useDefaultMargins="true"
+                android:padding="8dp"
+                android:columnCount="1"/>
+        </HorizontalScrollView>
+
+        <!-- Matrix B Inputs -->
+        <TextView
+            android:text="Matrix B Size:"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:paddingTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/rowsBInput"
+                android:hint="Rows B"
+                android:inputType="number"
+                android:backgroundTint="?android:attr/colorControlNormal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:padding="8dp"/>
+
+            <EditText
+                android:id="@+id/colsBInput"
+                android:hint="Cols B"
+                android:inputType="number"
+                android:backgroundTint="?android:attr/colorControlNormal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:padding="8dp"/>
+
+            <Button
+                android:id="@+id/generateMatrixBButton"
+                android:text="Generate B"
+                android:backgroundTint="?android:attr/colorAccent"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"/>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:paddingTop="8dp"
+            android:importantForAccessibility="no">
+
+            <GridLayout
+                android:id="@+id/matrixBGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:rowOrderPreserved="false"
+                android:useDefaultMargins="true"
+                android:padding="8dp"
+                android:columnCount="1"/>
+        </HorizontalScrollView>
+
+        <!-- Operation Spinner -->
+        <Spinner
+            android:id="@+id/operationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Calculate Button -->
+        <Button
+            android:id="@+id/calculateButton"
+            android:text="Calculate"
+            android:backgroundTint="?android:attr/colorAccent"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Result Title -->
+        <TextView
+            android:id="@+id/resultTitle"
+            android:text="Result Matrix:"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:paddingTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Result Display -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:importantForAccessibility="no">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/result_card_background"
+                android:elevation="6dp"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <GridLayout
+                    android:id="@+id/resultGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="1"
+                    android:rowOrderPreserved="false"
+                    android:useDefaultMargins="true" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</ScrollView>
